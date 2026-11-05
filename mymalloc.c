@@ -89,7 +89,7 @@ void *mymalloc(size_t s) {
   debug_printf("Malloc %zu bytes\n", s);
 
   block_t *b = find_free_block(s);
-  if(b != NULL) {
+  if (b != NULL) {
     b->free = 0; // reuse an old block
   } else {
     b = request_block(s);
